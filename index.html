@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна | WorkHard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased selection:bg-gray-200 selection:text-black">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-8">
+                    <a href="main.html" class="text-xl font-semibold tracking-tighter text-black flex items-center gap-1">
+                        <div class="w-6 h-6 bg-black text-white rounded flex items-center justify-center text-xs tracking-tighter">WH</div>
+                        WorkHard.
+                    </a>
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="jobs.html" class="text-sm font-medium text-gray-500 hover:text-black transition-colors">Всі вакансії</a>
+                        <a href="review.html" class="text-sm font-medium text-gray-500 hover:text-black transition-colors">Мої відгуки</a>
+                        <a href="chats.html" class="text-sm font-medium text-gray-500 hover:text-black transition-colors">Повідомлення</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4 sm:gap-6">
+                    <div class="hidden sm:flex bg-gray-100/80 p-1 rounded-lg items-center text-xs font-medium border border-gray-200/50">
+                        <button class="px-3 py-1.5 bg-white text-black rounded-md shadow-sm border border-gray-200/50">Шукаю роботу</button>
+                        <button class="px-3 py-1.5 text-gray-500 hover:text-black rounded-md transition-colors">Шукаю людей</button>
+                    </div>
+                    <div class="flex items-center gap-4 border-l border-gray-200 pl-4 sm:pl-6">
+                        <button class="relative text-gray-400 hover:text-black transition-colors">
+                            <iconify-icon icon="solar:bell-linear" class="text-xl"></iconify-icon>
+                            <span class="absolute top-0.5 right-0.5 w-2 h-2 bg-red-500 rounded-full border-[1.5px] border-white"></span>
+                        </button>
+                        <a href="account.html" class="w-8 h-8 rounded-full bg-gradient-to-tr from-gray-200 to-gray-100 border border-gray-300 flex items-center justify-center text-xs font-bold text-gray-700 hover:border-gray-500 transition-all">
+                            ОА
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-24 sm:py-32 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-4xl sm:text-6xl font-semibold tracking-tight text-black mb-6">
+                Знайдіть свій наступний кар'єрний крок.
+            </h1>
+            <p class="text-lg text-gray-500 mb-10 max-w-xl mx-auto">
+                Досліджуйте тисячі вакансій у найкращих технологічних компаніях та стартапах по всьому світу.
+            </p>
+
+            <form class="max-w-2xl mx-auto bg-white p-2 rounded-2xl border border-gray-200 shadow-xl flex flex-col sm:flex-row gap-2 focus-within:ring-4 focus-within:ring-gray-100 transition-all">
+                <div class="flex-1 flex items-center px-4 py-3 sm:border-r sm:border-gray-100">
+                    <iconify-icon icon="solar:magnifier-linear" class="text-gray-400 text-xl mr-3"></iconify-icon>
+                    <input type="text" placeholder="Посада або компанія" class="w-full bg-transparent border-none focus:outline-none text-sm text-gray-900">
+                </div>
+                <div class="flex-1 flex items-center px-4 py-3">
+                    <iconify-icon icon="solar:map-point-linear" class="text-gray-400 text-xl mr-3"></iconify-icon>
+                    <input type="text" placeholder="Місто або віддалено" class="w-full bg-transparent border-none focus:outline-none text-sm text-gray-900">
+                </div>
+                <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-black text-white text-sm font-medium rounded-xl hover:bg-gray-800 transition-colors shadow-lg shadow-black/10">
+                    Знайти
+                </button>
+            </form>
+            
+            <div class="mt-8 flex flex-wrap justify-center gap-2 text-sm text-gray-500 items-center">
+                <span class="text-xs font-medium uppercase tracking-wider text-gray-400">Популярне:</span>
+                <a href="#" class="px-4 py-1.5 bg-white border border-gray-200 rounded-full hover:border-black transition-all text-xs">Фронтенд</a>
+                <a href="#" class="px-4 py-1.5 bg-white border border-gray-200 rounded-full hover:border-black transition-all text-xs">Продуктовий дизайн</a>
+                <a href="#" class="px-4 py-1.5 bg-white border border-gray-200 rounded-full hover:border-black transition-all text-xs">Python</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-black rounded-[2.5rem] p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-10 overflow-hidden relative">
+            <div class="max-w-md relative z-10">
+                <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-6">Ваше резюме — це ваша перепустка до оферу</h2>
+                <p class="text-gray-400 text-lg mb-8 leading-relaxed">Повнота профілю безпосередньо впливає на кількість запрошень від рекрутерів. Заповніть усі розділи, щоб бути в топі пошуку.</p>
+                <a href="account.html" class="inline-flex items-center px-8 py-4 bg-white text-black font-semibold rounded-2xl hover:bg-gray-100 transition-all gap-2 group">
+                    Створити резюме
+                    <iconify-icon icon="solar:arrow-right-up-linear" class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></iconify-icon>
+                </a>
+            </div>
+            
+            <div class="w-full max-w-md bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 relative z-10">
+                <div class="flex items-center justify-between mb-6">
+                    <span class="text-sm font-medium text-gray-300">Заповнюваність профілю</span>
+                    <span class="text-2xl font-bold">85%</span>
+                </div>
+                <div class="w-full bg-white/10 h-3 rounded-full mb-8 overflow-hidden">
+                    <div class="bg-white h-full rounded-full" style="width: 85%"></div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 text-sm">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-emerald-400 text-lg"></iconify-icon>
+                        <span class="text-gray-300">Досвід роботи (+40% до відгуків)</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm">
+                        <iconify-icon icon="solar:check-circle-bold" class="text-emerald-400 text-lg"></iconify-icon>
+                        <span class="text-gray-300">Навички та інструменти (+25%)</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm opacity-50">
+                        <iconify-icon icon="solar:add-circle-linear" class="text-white text-lg"></iconify-icon>
+                        <span class="text-gray-300">Портфоліо (+20%) — <span class="text-white font-medium">Додати</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="flex items-end justify-between mb-10">
+            <div>
+                <h2 class="text-3xl font-semibold tracking-tight text-gray-900">Рекомендовані вакансії</h2>
+                <p class="text-gray-500 mt-2">Підібрано на основі ваших інтересів та навичок</p>
+            </div>
+            <a href="jobs.html" class="hidden sm:flex items-center gap-2 text-sm font-semibold text-black hover:opacity-70 transition-opacity">
+                Переглянути всі <iconify-icon icon="solar:arrow-right-linear"></iconify-icon>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <article class="bg-white border border-orange-200 rounded-3xl p-6 relative hover:shadow-xl transition-all group cursor-pointer">
+                <div class="flex justify-between items-start gap-4 mb-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-orange-50 text-orange-700 border border-orange-100">
+                                <iconify-icon icon="solar:fire-linear"></iconify-icon> Гаряча
+                            </span>
+                            <span class="text-xs text-gray-400 font-medium">TechFlow</span>
+                        </div>
+                        <h3 class="text-xl font-bold tracking-tight text-gray-900 mb-1 group-hover:text-orange-600 transition-colors">Senior React Native Engineer</h3>
+                        <div class="text-lg font-bold text-gray-900">$4,500 - $6,000</div>
+                    </div>
+                    <div class="w-12 h-12 bg-black rounded-2xl flex items-center justify-center text-white text-xl font-bold">T</div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-medium flex items-center gap-1.5">
+                        <iconify-icon icon="solar:map-point-linear"></iconify-icon> Віддалено
+                    </span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-medium flex items-center gap-1.5">
+                        <iconify-icon icon="solar:clock-circle-linear"></iconify-icon> Повний день
+                    </span>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100 mb-6">
+                    <div class="flex items-center justify-between mb-2 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                        <span>Процес найму</span>
+                        <span class="text-black">3 етапи</span>
+                    </div>
+                    <div class="flex gap-1 h-1.5 mb-2">
+                        <div class="flex-1 bg-black rounded-full"></div>
+                        <div class="flex-1 bg-gray-200 rounded-full"></div>
+                        <div class="flex-1 bg-gray-200 rounded-full"></div>
+                    </div>
+                    <div class="flex justify-between text-[10px] text-gray-400 font-medium italic">
+                        <span>Скрінінг</span>
+                        <span>Тех. інтерв'ю</span>
+                        <span>Офер</span>
+                    </div>
+                </div>
+
+                <p class="text-sm text-gray-500 line-clamp-2 mb-8 leading-relaxed">
+                    Шукаємо інженера для розробки продукту з нуля. Стек: React Native, TypeScript, Redux Toolkit.
+                </p>
+
+                <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+                    <button class="px-6 py-3 bg-black text-white text-sm font-bold rounded-2xl hover:bg-gray-800 transition-all shadow-lg shadow-black/5">Відгукнутися</button>
+                    <div class="flex gap-2">
+                        <button class="w-11 h-11 flex items-center justify-center rounded-xl bg-gray-50 text-gray-400 hover:text-black hover:bg-gray-100 transition-all border border-gray-100">
+                            <iconify-icon icon="solar:bookmark-linear" class="text-xl"></iconify-icon>
+                        </button>
+                        <button class="w-11 h-11 flex items-center justify-center rounded-xl bg-gray-50 text-gray-400 hover:text-red-600 hover:bg-red-50 transition-all border border-gray-100">
+                            <iconify-icon icon="solar:eye-closed-linear" class="text-xl"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="bg-white border border-gray-200 rounded-3xl p-6 relative hover:shadow-xl transition-all group cursor-pointer">
+                <div class="flex justify-between items-start gap-4 mb-4">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs text-gray-400 font-medium">CraftStudio</span>
+                        </div>
+                        <h3 class="text-xl font-bold tracking-tight text-gray-900 mb-1 group-hover:text-black">Middle UI/UX Designer</h3>
+                        <div class="text-lg font-bold text-gray-900">$2,000 - $3,500</div>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-xl font-bold">C</div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-medium flex items-center gap-1.5">
+                        <iconify-icon icon="solar:map-point-linear"></iconify-icon> Київ / Гібрид
+                    </span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-medium flex items-center gap-1.5">
+                        <iconify-icon icon="solar:case-minimalistic-linear"></iconify-icon> Агенція
+                    </span>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-2xl border border-gray-100 mb-6">
+                    <div class="flex items-center justify-between mb-2 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                        <span>Процес найму</span>
+                        <span class="text-black">4 етапи</span>
+                    </div>
+                    <div class="flex gap-1 h-1.5 mb-2">
+                        <div class="flex-1 bg-black rounded-full"></div>
+                        <div class="flex-1 bg-gray-200 rounded-full"></div>
+                        <div class="flex-1 bg-gray-200 rounded-full"></div>
+                        <div class="flex-1 bg-gray-200 rounded-full"></div>
+                    </div>
+                    <div class="flex justify-between text-[10px] text-gray-400 font-medium italic">
+                        <span>HR</span>
+                        <span>Тестове</span>
+                        <span>Тех. інтерв'ю</span>
+                        <span>Офер</span>
+                    </div>
+                </div>
+
+                <p class="text-sm text-gray-500 line-clamp-2 mb-8 leading-relaxed">
+                    Шукаємо дизайнера для роботи над SaaS продуктами. Досвід з Figma та дизайн-системами обов'язковий.
+                </p>
+
+                <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+                    <button class="px-6 py-3 bg-black text-white text-sm font-bold rounded-2xl hover:bg-gray-800 transition-all shadow-lg shadow-black/5">Відгукнутися</button>
+                    <div class="flex gap-2">
+                        <button class="w-11 h-11 flex items-center justify-center rounded-xl bg-gray-50 text-gray-400 hover:text-black hover:bg-gray-100 transition-all border border-gray-100">
+                            <iconify-icon icon="solar:bookmark-linear" class="text-xl"></iconify-icon>
+                        </button>
+                        <button class="w-11 h-11 flex items-center justify-center rounded-xl bg-gray-50 text-gray-400 hover:text-red-600 hover:bg-red-50 transition-all border border-gray-100">
+                            <iconify-icon icon="solar:eye-closed-linear" class="text-xl"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+        
+        <div class="mt-10 text-center sm:hidden">
+            <a href="jobs.html" class="inline-flex items-center gap-2 text-sm font-bold text-black border border-gray-200 px-6 py-3 rounded-xl bg-white">
+                Переглянути всі вакансії
+            </a>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="bg-gray-100 rounded-[2.5rem] p-8 sm:p-16 border border-gray-200 flex flex-col items-center text-center">
+            <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mb-8">
+                <iconify-icon icon="solar:bell-bing-bold-duotone" class="text-3xl text-black"></iconify-icon>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-black mb-4">Отримуйте нові вакансії миттєво</h2>
+            <p class="text-gray-500 text-lg mb-10 max-w-xl">Ми будемо надсилати лише ті пропозиції, які ідеально підходять під ваш стек та зарплатні очікування.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md">
+                <a href="#" class="flex-1 flex items-center justify-center gap-3 px-8 py-4 bg-[#229ED9] text-white font-bold rounded-2xl hover:opacity-90 transition-all shadow-lg shadow-[#229ED9]/20">
+                    <iconify-icon icon="logos:telegram" class="text-xl"></iconify-icon> Telegram
+                </a>
+                <a href="#" class="flex-1 flex items-center justify-center gap-3 px-8 py-4 bg-[#7360F2] text-white font-bold rounded-2xl hover:opacity-90 transition-all shadow-lg shadow-[#7360F2]/20">
+                    <iconify-icon icon="logos:viber" class="text-xl filter invert brightness-0"></iconify-icon> Viber
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-12 mb-16">
+                <div class="flex flex-col items-center md:items-start gap-6">
+                    <a href="main.html" class="text-2xl font-bold tracking-tighter text-black flex items-center gap-1.5">
+                        <div class="w-7 h-7 bg-black text-white rounded flex items-center justify-center text-[10px] tracking-tighter">WH</div>
+                        WorkHard.
+                    </a>
+                    <p class="text-sm text-gray-500 max-w-xs text-center md:text-left leading-relaxed">
+                        Новий стандарт пошуку роботи в IT. Прозоро, швидко та без стресу для кандидатів.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-12 sm:gap-24 text-sm">
+                    <div class="flex flex-col gap-4">
+                        <span class="font-bold text-black uppercase tracking-widest text-[10px]">Ресурси</span>
+                        <a href="#" class="text-gray-500 hover:text-black transition-colors">Блог</a>
+                        <a href="#" class="text-gray-500 hover:text-black transition-colors">Медіакит</a>
+                        <a href="#" class="text-gray-500 hover:text-black transition-colors">Події</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <span class="font-bold text-black uppercase tracking-widest text-[10px]">Компанія</span>
+                        <a href="#" class="text-gray-500 hover:text-black transition-colors">Про нас</a>
+                        <a href="#" class="text-gray-500 hover:text-black transition-colors">Кар'єра</a>
+                        <a href="#" class="text-gray-500 hover:text-black transition-colors">Контакти</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <span class="font-bold text-black uppercase tracking-widest text-[10px]">Підтримка</span>
+                        <a href="#" class="text-gray-500 hover:text-black transition-colors">Допомога</a>
+                        <a href="#" class="text-gray-500 hover:text-black transition-colors">Умови</a>
+                        <a href="#" class="text-gray-500 hover:text-black transition-colors">Політика</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-6 pt-8 border-t border-gray-100">
+                <p class="text-[10px] font-medium text-gray-400 uppercase tracking-widest">© 2026 WorkHard Inc. Made with Passion</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-gray-400 hover:text-black transition-colors"><iconify-icon icon="solar:twitter-linear" class="text-xl"></iconify-icon></a>
+                    <a href="#" class="text-gray-400 hover:text-black transition-colors"><iconify-icon icon="solar:github-linear" class="text-xl"></iconify-icon></a>
+                    <a href="#" class="text-gray-400 hover:text-black transition-colors"><iconify-icon icon="solar:letter-linear" class="text-xl"></iconify-icon></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
