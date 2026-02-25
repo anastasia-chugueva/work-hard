@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Повідомлення | WorkHard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        body { font-family: 'Inter', sans-serif; overflow: hidden; }
+        
+        /* Тонкий скролбар для областей контенту */
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 10px; }
+        
+        .chat-sidebar { transition: all 0.3s ease; }
+        @media (max-width: 1023px) {
+            .chat-sidebar.hidden { display: none; }
+            .context-panel.hidden { display: none; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased h-screen flex flex-col">
+
+    <nav class="shrink-0 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-8">
+                    <a href="main.html" class="text-xl font-semibold tracking-tighter text-black flex items-center gap-1">
+                        <div class="w-6 h-6 bg-black text-white rounded flex items-center justify-center text-xs tracking-tighter">WH</div>
+                        WorkHard.
+                    </a>
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="jobs.html" class="text-sm font-medium text-gray-500 hover:text-black transition-colors">Всі вакансії</a>
+                        <a href="review.html" class="text-sm font-medium text-gray-500 hover:text-black transition-colors">Мої відгуки</a>
+                        <a href="chats.html" class="text-sm font-medium text-gray-500 hover:text-black transition-colors">Повідомлення</a>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 sm:gap-6">
+                    <div class="hidden sm:flex bg-gray-100/80 p-1 rounded-lg items-center text-xs font-medium border border-gray-200/50">
+                        <button class="px-3 py-1.5 bg-white text-black rounded-md shadow-sm border border-gray-200/50">Шукаю роботу</button>
+                        <button class="px-3 py-1.5 text-gray-500 hover:text-black rounded-md transition-colors">Шукаю людей</button>
+                    </div>
+                    <div class="flex items-center gap-4 border-l border-gray-200 pl-4 sm:pl-6">
+                        <button class="relative text-gray-400 hover:text-black transition-colors">
+                            <iconify-icon icon="solar:bell-linear" class="text-xl"></iconify-icon>
+                            <span class="absolute top-0.5 right-0.5 w-2 h-2 bg-red-500 rounded-full border-[1.5px] border-white"></span>
+                        </button>
+                        <a href="account.html" class="w-8 h-8 rounded-full bg-gradient-to-tr from-gray-200 to-gray-100 border border-gray-300 flex items-center justify-center text-xs font-bold text-gray-700">ОА</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 flex flex-col min-h-0">
+        <div class="flex-1 bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden flex h-full relative">
+            
+            <aside id="chatList" class="chat-sidebar w-full lg:w-[320px] flex flex-col border-r border-gray-200 bg-white shrink-0 z-20">
+                <div class="p-4 border-b border-gray-100 shrink-0">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-semibold tracking-tight text-gray-900">Чати</h2>
+                        <span class="text-xs font-medium text-gray-500 bg-gray-100 px-2.5 py-1 rounded-full">4 нові</span>
+                    </div>
+                    <button class="w-full flex items-center justify-between px-3 py-1.5 bg-gray-50 border border-gray-200 rounded-lg text-xs font-medium text-gray-600 hover:bg-gray-100 transition-colors">
+                        <span class="flex items-center gap-1.5"><iconify-icon icon="solar:sort-by-time-linear"></iconify-icon> Нові</span>
+                        <iconify-icon icon="solar:alt-arrow-down-linear"></iconify-icon>
+                    </button>
+                </div>
+
+                <div class="flex-1 overflow-y-auto custom-scrollbar">
+                    <div class="p-4 border-b border-gray-100 bg-blue-50/30 border-l-[3px] border-l-blue-600 cursor-pointer">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center gap-2">
+                                <div class="w-8 h-8 bg-black rounded flex items-center justify-center text-white text-xs font-medium">T</div>
+                                <div>
+                                    <h3 class="text-sm font-semibold text-gray-900">TechFlow</h3>
+                                    <p class="text-xs text-gray-500">Олена • 14:22</p>
+                                </div>
+                            </div>
+                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                        </div>
+                        <h4 class="text-sm font-medium text-gray-900 mb-1">UI/UX Designer</h4>
+                        <p class="text-xs font-semibold text-green-600">$2,000 - $3,000</p>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="flex-1 flex flex-col bg-white min-w-0 relative z-10">
+                <div class="h-16 px-6 flex items-center justify-between border-b border-gray-100 shrink-0 bg-white/80 backdrop-blur-sm">
+                    <div class="flex items-center gap-3">
+                        <button onclick="toggleSidebar()" class="lg:hidden text-gray-500 mr-2">
+                            <iconify-icon icon="solar:alt-arrow-left-linear" class="text-2xl"></iconify-icon>
+                        </button>
+                        <div class="relative">
+                            <img src="https://ui-avatars.com/api/?name=Olena&background=f3f4f6&color=000&rounded=true" class="w-9 h-9 rounded-full">
+                            <div class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-white rounded-full"></div>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-semibold text-gray-900">Олена</h2>
+                            <p class="text-xs text-gray-500">HR Manager • TechFlow</p>
+                        </div>
+                    </div>
+                    <button onclick="toggleContext()" class="text-gray-400 hover:text-black transition-colors">
+                        <iconify-icon icon="solar:info-circle-linear" class="text-2xl"></iconify-icon>
+                    </button>
+                </div>
+
+                <div class="flex-1 overflow-y-auto p-6 space-y-6 bg-slate-50/30 custom-scrollbar">
+                    <div class="text-center"><span class="text-[10px] font-medium text-gray-400 bg-white px-3 py-1 rounded-full border border-gray-100">Сьогодні</span></div>
+                    
+                    <div class="flex items-end gap-2 max-w-[85%] sm:max-w-[70%]">
+                        <img src="https://ui-avatars.com/api/?name=Olena&background=f3f4f6&color=000&rounded=true" class="w-6 h-6 rounded-full mb-1">
+                        <div class="bg-gray-100 text-gray-900 p-3.5 rounded-2xl rounded-bl-sm text-sm">
+                            Привіт! 👋 Ваше резюме дуже зацікавило команду. Чи зручно буде зідзвонитися завтра?
+                        </div>
+                    </div>
+
+                    <div class="flex items-end justify-end gap-2 w-full">
+                        <span class="text-[10px] text-gray-400 mb-1">11:20 <iconify-icon icon="solar:check-read-linear" class="text-blue-500 ml-0.5 inline-block"></iconify-icon></span>
+                        <div class="bg-black text-white p-3.5 rounded-2xl rounded-br-sm text-sm max-w-[85%] sm:max-w-[70%] shadow-sm">
+                            Доброго дня! Так, забронюю слот у календарі.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shrink-0 bg-white border-t border-gray-100">
+                    <div class="px-6 py-3 flex gap-2 overflow-x-auto no-scrollbar border-b border-gray-50">
+                        <button class="shrink-0 text-xs font-medium text-gray-600 bg-gray-50 border border-gray-200 rounded-full px-3.5 py-1.5 hover:bg-gray-100">Дякую, перегляну</button>
+                        <button class="shrink-0 text-xs font-medium text-gray-600 bg-gray-50 border border-gray-200 rounded-full px-3.5 py-1.5 hover:bg-gray-100">Цей час мені підходить</button>
+                    </div>
+
+                    <div class="p-4 px-6 flex items-end gap-3">
+                        <div class="flex-1 bg-gray-50 border border-gray-200 rounded-xl flex items-end overflow-hidden">
+                            <button class="p-3 text-gray-400 hover:text-black"><iconify-icon icon="solar:paperclip-linear" class="text-xl"></iconify-icon></button>
+                            <textarea rows="1" class="flex-1 bg-transparent border-none py-3 px-1 text-sm text-gray-900 placeholder-gray-400 focus:ring-0 resize-none outline-none" placeholder="Напишіть повідомлення..."></textarea>
+                        </div>
+                        <button class="w-11 h-11 bg-black text-white rounded-xl flex items-center justify-center hover:bg-gray-800 transition-colors shadow-sm">
+                            <iconify-icon icon="solar:plain-linear" class="text-xl"></iconify-icon>
+                        </button>
+                    </div>
+
+                    <div class="bg-gray-50/80 px-6 py-3 border-t border-gray-100 flex items-center justify-between">
+                        <button class="px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50 rounded-lg">Відхилити</button>
+                        <button class="px-5 py-2 text-xs font-semibold text-white bg-emerald-500 hover:bg-emerald-600 rounded-xl shadow-sm flex items-center gap-1.5">
+                            <iconify-icon icon="solar:confetti-linear" class="text-base"></iconify-icon> Отримано офер!
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <aside id="contextPanel" class="context-panel w-full lg:w-[340px] border-l border-gray-200 bg-gray-50/50 shrink-0 hidden xl:flex flex-col overflow-y-auto custom-scrollbar absolute right-0 top-0 h-full lg:relative lg:translate-x-0 transition-transform bg-white z-30">
+                <div class="p-6 space-y-8">
+                    <section class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm">
+                        <h3 class="text-sm font-semibold text-gray-900 tracking-tight mb-5 flex items-center gap-2">
+                            <iconify-icon icon="solar:route-linear" class="text-gray-400"></iconify-icon> Етап найму
+                        </h3>
+                        <div class="relative pl-5 border-l border-gray-100 space-y-6">
+                            <div class="relative">
+                                <div class="absolute -left-[25px] top-1 w-2.5 h-2.5 rounded-full bg-green-500 ring-4 ring-white"></div>
+                                <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-0.5">Етап 1</p>
+                                <p class="text-sm font-medium text-gray-900">Скрінінг</p>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-[25px] top-1 w-2.5 h-2.5 rounded-full bg-blue-500 ring-4 ring-white shadow-[0_0_8px_rgba(59,130,246,0.3)]"></div>
+                                <p class="text-[10px] font-semibold text-blue-500 uppercase tracking-wider mb-0.5">Етап 2</p>
+                                <p class="text-sm font-semibold text-gray-900">Знайомство з HR</p>
+                            </div>
+                            <div class="relative opacity-50">
+                                <div class="absolute -left-[25px] top-1 w-2.5 h-2.5 rounded-full bg-gray-300 ring-4 ring-white"></div>
+                                <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-0.5">Етап 3</p>
+                                <p class="text-sm font-medium text-gray-500">Тестове завдання</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm">
+                        <h3 class="text-sm font-semibold text-gray-900 tracking-tight mb-4 flex items-center gap-2">
+                            <iconify-icon icon="solar:calendar-linear" class="text-gray-400"></iconify-icon> Календар
+                        </h3>
+                        <p class="text-xs text-gray-500 mb-3">Вільні слоти рекрутера:</p>
+                        <div class="space-y-2 mb-5">
+                            <label class="flex items-center justify-between p-2.5 rounded-xl border border-gray-200 cursor-pointer hover:bg-gray-50 transition-all">
+                                <div class="flex items-center gap-3">
+                                    <input type="radio" name="slot" class="w-4 h-4 accent-black">
+                                    <span class="text-sm font-medium text-gray-700">Завтра, 14 Жов</span>
+                                </div>
+                                <span class="text-xs font-semibold text-gray-900">14:00</span>
+                            </label>
+                            <label class="flex items-center justify-between p-2.5 rounded-xl border border-blue-500 bg-blue-50/50 cursor-pointer transition-all">
+                                <div class="flex items-center gap-3">
+                                    <input type="radio" name="slot" checked class="w-4 h-4 accent-blue-500">
+                                    <span class="text-sm font-medium text-black">П'ятниця, 15 Жов</span>
+                                </div>
+                                <span class="text-xs font-semibold text-blue-700">11:30</span>
+                            </label>
+                        </div>
+                        <button class="w-full py-2.5 bg-black text-white text-xs font-semibold rounded-xl hover:bg-gray-800 transition-colors shadow-sm">
+                            Призначити зустріч
+                        </button>
+                    </section>
+
+                    <section class="bg-white rounded-2xl p-5 border border-gray-200 shadow-sm">
+                        <h3 class="text-sm font-semibold text-gray-900 tracking-tight mb-4 flex items-center gap-2">
+                            <iconify-icon icon="solar:folder-with-files-linear" class="text-gray-400"></iconify-icon> Тестове завдання
+                        </h3>
+                        <div class="border-2 border-dashed border-gray-200 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:bg-gray-50 transition-colors cursor-pointer mb-4">
+                            <iconify-icon icon="solar:upload-linear" class="text-3xl text-gray-400 mb-2"></iconify-icon>
+                            <span class="text-sm font-medium text-gray-900 mb-1">Завантажити файл</span>
+                            <span class="text-[10px] text-gray-400">PDF або ZIP</span>
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <button class="w-full py-2.5 bg-black text-white text-xs font-semibold rounded-xl hover:bg-gray-800 transition-colors shadow-sm">Надіслати</button>
+                            <button class="w-full py-2 text-xs font-medium text-gray-500 hover:text-red-600 transition-colors">Відкликати доступ</button>
+                        </div>
+                    </section>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('chatList').classList.toggle('hidden');
+        }
+        function toggleContext() {
+            const panel = document.getElementById('contextPanel');
+            panel.classList.toggle('hidden');
+            if (!panel.classList.contains('hidden')) {
+                panel.classList.remove('xl:flex');
+                panel.classList.add('flex');
+            }
+        }
+    </script>
+</body>
+</html>
