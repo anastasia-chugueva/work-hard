@@ -51,34 +51,107 @@
     </div>
 </nav>
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <div class="mb-8">
-        <h1 class="text-3xl font-medium tracking-tight text-gray-900">Особистий кабінет</h1>
-        <p class="mt-1 text-sm text-gray-500">Керуйте своїм резюме та налаштуваннями профілю.</p>
-    </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        <aside class="lg:col-span-3">
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+        
+        <!-- ЛІВА ЧАСТИНА: Статична (фіксована при скролі) -->
+        <aside class="lg:col-span-3 pt-10 pb-10 pr-8 border-r border-gray-200 h-[calc(100vh-64px)] sticky top-16 overflow-y-auto">
+            <!-- Заголовок переїхав сюди, як на твоєму фото -->
+            <div class="mb-10">
+                <h1 class="text-3xl font-semibold tracking-tight text-gray-900 leading-tight">Особистий кабінет</h1>
+                <p class="mt-2 text-sm text-gray-500">Керуйте своїм резюме та налаштуваннями профілю.</p>
+            </div>
+
             <nav class="space-y-1" id="tab-menu">
-                <button onclick="switchTab('tab-resume')" class="tab-btn w-full flex items-center px-3 py-2.5 text-sm rounded-lg bg-gray-100 text-gray-900 group transition-colors">
+                <button onclick="switchTab('tab-resume')" class="tab-btn w-full flex items-center px-4 py-3 text-sm font-medium rounded-xl bg-gray-100 text-gray-900 group transition-all">
                     <iconify-icon icon="solar:document-text-linear" width="20" class="mr-3 text-gray-900"></iconify-icon>
                     Моє резюме
                 </button>
-                <button onclick="switchTab('tab-stats')" class="tab-btn w-full flex items-center px-3 py-2.5 text-sm rounded-lg text-gray-500 hover:bg-gray-50 hover:text-gray-900 group transition-colors">
+                <button onclick="switchTab('tab-stats')" class="tab-btn w-full flex items-center px-4 py-3 text-sm font-medium rounded-xl text-gray-500 hover:bg-gray-50 hover:text-gray-900 group transition-all">
                     <iconify-icon icon="solar:chart-2-linear" width="20" class="mr-3 text-gray-400 group-hover:text-gray-600"></iconify-icon>
                     Статистика відгуків
                 </button>
-                <button onclick="switchTab('tab-settings')" class="tab-btn w-full flex items-center px-3 py-2.5 text-sm rounded-lg text-gray-500 hover:bg-gray-50 hover:text-gray-900 group transition-colors">
+                <button onclick="switchTab('tab-settings')" class="tab-btn w-full flex items-center px-4 py-3 text-sm font-medium rounded-xl text-gray-500 hover:bg-gray-50 hover:text-gray-900 group transition-all">
                     <iconify-icon icon="solar:settings-linear" width="20" class="mr-3 text-gray-400 group-hover:text-gray-600"></iconify-icon>
                     Налаштування
                 </button>
             </nav>
+
+            <!-- Кнопки внизу сайдбару -->
+            <div class="mt-10 pt-10 border-t border-gray-100 space-y-1">
+                <button class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-xl text-gray-500 hover:bg-gray-50 transition-colors">
+                    <iconify-icon icon="solar:user-plus-linear" width="20" class="mr-3 text-gray-400"></iconify-icon>
+                    Змінити акаунт
+                </button>
+                <button class="w-full flex items-center px-4 py-3 text-sm font-medium rounded-xl text-red-500 hover:bg-red-50 transition-colors">
+                    <iconify-icon icon="solar:logout-linear" width="20" class="mr-3"></iconify-icon>
+                    Вийти
+                </button>
+            </div>
         </aside>
 
-        <div class="lg:col-span-9 space-y-8">
+        <div class="lg:col-span-9 pl-12 pt-8 pb-10">
+            
             
             <div id="tab-resume" class="tab-content space-y-8">
                 
+                <!-- 1. Блок профілю (Новий) -->
+                <section class="bg-white rounded-2xl border border-gray-200 p-6 flex items-center justify-between relative shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+                    <div class="flex items-center gap-6">
+                        <div class="relative group">
+                            <div class="w-24 h-24 rounded-2xl bg-gray-100 border border-gray-200 overflow-hidden">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex" alt="Avatar" class="w-full h-full object-cover">
+                            </div>
+                            <button class="absolute -bottom-2 -right-2 w-8 h-8 bg-white border border-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:text-black shadow-sm">
+                                <iconify-icon icon="solar:camera-linear" width="16"></iconify-icon>
+                            </button>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-semibold text-gray-900 tracking-tight">Олексій Андрієнко</h2>
+                            <p class="text-gray-500 text-sm">28 років • Senior Product Designer</p>
+                            <div class="flex gap-2 mt-2">
+                                <span class="px-2 py-0.5 bg-green-50 text-green-600 text-[10px] font-bold uppercase rounded border border-green-100">Активно шукаю роботу</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="p-2.5 text-gray-400 hover:text-black transition-colors border border-gray-100 rounded-xl hover:bg-gray-50">
+                        <iconify-icon icon="solar:pen-new-square-linear" width="22"></iconify-icon>
+                    </button>
+                </section>
+
+                <!-- 2. Блок контактів (Новий) -->
+                <section class="bg-white rounded-2xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-100 bg-gray-50/30">
+                        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Контактна інформація</h2>
+                    </div>
+                    <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="space-y-1">
+                            <label class="text-[11px] text-gray-400 uppercase font-bold tracking-wider">Email</label>
+                            <div class="flex items-center text-sm text-gray-700">
+                                <iconify-icon icon="solar:letter-linear" class="mr-2 text-gray-400 text-lg"></iconify-icon>
+                                alex.design@example.com
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[11px] text-gray-400 uppercase font-bold tracking-wider">Телефон</label>
+                            <div class="flex items-center text-sm text-gray-700">
+                                <iconify-icon icon="solar:phone-linear" class="mr-2 text-gray-400 text-lg"></iconify-icon>
+                                +380 67 000 00 00
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[11px] text-gray-400 uppercase font-bold tracking-wider">Соцмережі та портфоліо</label>
+                            <div class="flex gap-3 mt-1">
+                                <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors"><iconify-icon icon="entypo-social:linkedin-with-circle" width="20"></iconify-icon></a>
+                                <a href="#" class="text-gray-400 hover:text-black transition-colors"><iconify-icon icon="solar:globus-linear" width="20"></iconify-icon></a>
+                                <a href="#" class="text-gray-400 hover:text-pink-600 transition-colors"><iconify-icon icon="solar:link-circle-linear" width="20"></iconify-icon></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. Основна інформація (Твій існуючий блок) -->
                 <section class="bg-white rounded-2xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden">
                     <div class="px-6 py-5 border-b border-gray-100 bg-gray-50/30">
                         <h2 class="text-lg font-medium tracking-tight text-gray-900">Основна інформація</h2>
@@ -131,11 +204,6 @@
                                         <div class="w-4 h-4 border border-gray-200 rounded bg-white peer-checked:bg-gray-900 peer-checked:border-gray-900 transition-colors shadow-sm"></div>
                                         <span class="text-sm text-gray-700">Часткова</span>
                                     </label>
-                                    <label class="flex items-center space-x-2.5 cursor-pointer group">
-                                        <input type="checkbox" class="peer sr-only">
-                                        <div class="w-4 h-4 border border-gray-200 rounded bg-white peer-checked:bg-gray-900 peer-checked:border-gray-900 transition-colors shadow-sm"></div>
-                                        <span class="text-sm text-gray-700">Проектна</span>
-                                    </label>
                                 </div>
                             </div>
                             <div class="space-y-3">
@@ -151,42 +219,26 @@
                                         <div class="w-4 h-4 border border-gray-200 rounded bg-white peer-checked:bg-gray-900 peer-checked:border-gray-900 transition-colors shadow-sm"></div>
                                         <span class="text-sm text-gray-700">Офіс</span>
                                     </label>
-                                    <label class="flex items-center space-x-2.5 cursor-pointer group">
-                                        <input type="checkbox" class="peer sr-only">
-                                        <div class="w-4 h-4 border border-gray-200 rounded bg-white peer-checked:bg-gray-900 peer-checked:border-gray-900 transition-colors shadow-sm"></div>
-                                        <span class="text-sm text-gray-700">Гібрид</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="md:col-span-2">
-                                <label class="block text-sm text-gray-600 mb-3">Бажана мова спілкування</label>
-                                <div class="flex space-x-6">
-                                    <label class="flex items-center space-x-2.5 cursor-pointer group">
-                                        <input type="radio" name="comm_lang" checked class="peer sr-only">
-                                        <div class="w-4 h-4 border border-gray-200 rounded-full bg-white peer-checked:border-[5px] peer-checked:border-gray-900 transition-all shadow-sm"></div>
-                                        <span class="text-sm text-gray-700">Українська</span>
-                                    </label>
-                                    <label class="flex items-center space-x-2.5 cursor-pointer group">
-                                        <input type="radio" name="comm_lang" class="peer sr-only">
-                                        <div class="w-4 h-4 border border-gray-200 rounded-full bg-white peer-checked:border-[5px] peer-checked:border-gray-900 transition-all shadow-sm"></div>
-                                        <span class="text-sm text-gray-700">Англійська</span>
-                                    </label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
+                <!-- Професійний досвід -->
                 <section class="bg-white rounded-2xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden">
+                    <!-- Заголовок секції -->
                     <div class="px-6 py-5 border-b border-gray-100 bg-gray-50/30">
                         <h2 class="text-lg font-medium tracking-tight text-gray-900">Професійний досвід</h2>
                         <p class="text-xs text-gray-500 mt-1">Розкажіть про свій кар'єрний шлях.</p>
                     </div>
+
                     <div class="p-6 space-y-8">
+                        <!-- Загальний стаж роботи -->
                         <div class="max-w-xs">
-                            <label class="block text-sm text-gray-600 mb-2">Загальний стаж роботи</label>
+                            <label class="block text-sm text-gray-600 mb-2 font-medium">Загальний стаж роботи</label>
                             <div class="relative">
-                                <select class="w-full px-3 py-2 text-sm bg-white border border-gray-200 rounded-lg shadow-sm focus:outline-none appearance-none cursor-pointer">
+                                <select class="w-full px-4 py-2.5 text-sm bg-white border border-gray-200 rounded-xl shadow-sm focus:outline-none appearance-none cursor-pointer">
                                     <option>Менше 1 року</option>
                                     <option>1-3 роки</option>
                                     <option selected>3-5 років</option>
@@ -196,108 +248,170 @@
                             </div>
                         </div>
 
-                        <div class="border border-gray-200 rounded-xl p-5 space-y-5 bg-gray-50/20 relative group transition-colors hover:border-gray-300">
+                        <!-- Картка місця роботи -->
+                        <div class="border border-gray-100 rounded-2xl p-6 space-y-6 bg-gray-50/20 relative group transition-colors hover:border-gray-200">
                             <button class="absolute top-4 right-4 text-gray-400 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">
                                 <iconify-icon icon="solar:trash-bin-trash-linear" width="18"></iconify-icon>
                             </button>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                <div class="md:col-span-2">
-                                    <label class="block text-xs text-gray-500 mb-1.5">Посада</label>
-                                    <input type="text" value="Senior Product Designer" class="w-full px-3 py-2 text-sm bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-100 transition-all">
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                                <!-- Посада -->
+                                <div class="md:col-span-12">
+                                    <label class="block text-xs text-gray-500 mb-1.5 ml-1">Посада</label>
+                                    <input type="text" value="Senior Product Designer" class="w-full px-4 py-2.5 text-sm bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-100 transition-all">
                                 </div>
-                                <div>
-                                    <label class="block text-xs text-gray-500 mb-1.5">Компанія</label>
-                                    <input type="text" value="Linear" class="w-full px-3 py-2 text-sm bg-white border border-gray-200 rounded-lg">
+                                
+                                <!-- Компанія -->
+                                <div class="md:col-span-6">
+                                    <label class="block text-xs text-gray-500 mb-1.5 ml-1">Компанія</label>
+                                    <input type="text" value="Linear" class="w-full px-4 py-2.5 text-sm bg-white border border-gray-200 rounded-xl">
                                 </div>
-                                <div class="grid grid-cols-2 gap-3">
-                                    <div>
-                                        <label class="block text-xs text-gray-500 mb-1.5">Початок</label>
-                                        <input type="month" value="2021-03" class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg">
+
+                                <!-- Початок -->
+                                <div class="md:col-span-3">
+                                    <label class="block text-xs text-gray-500 mb-1.5 ml-1">Початок</label>
+                                    <div class="relative">
+                                        <input type="text" value="березень 2021 р." class="w-full px-4 py-2.5 text-sm bg-white border border-gray-200 rounded-xl outline-none">
+                                        <iconify-icon icon="solar:calendar-linear" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"></iconify-icon>
                                     </div>
-                                    <div>
-                                        <label class="block text-xs text-gray-500 mb-1.5">Кінець</label>
-                                        <input type="month" class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" placeholder="Тепер. час">
+                                </div>
+
+                                <!-- Кінець -->
+                                <div class="md:col-span-3">
+                                    <label class="block text-xs text-gray-500 mb-1.5 ml-1">Кінець</label>
+                                    <div class="relative">
+                                        <input type="text" placeholder="--------- ---- р." class="w-full px-4 py-2.5 text-sm bg-white border border-gray-200 rounded-xl outline-none">
+                                        <iconify-icon icon="solar:calendar-linear" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"></iconify-icon>
                                     </div>
                                 </div>
-                                <div class="md:col-span-2">
-                                    <label class="block text-xs text-gray-500 mb-1.5">Опис обов'язків</label>
-                                    <textarea rows="3" class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg resize-none leading-relaxed">Проектування інтерфейсів для B2B платформи. Створення та підтримка дизайн-системи. Проведення A/B тестувань та інтерв'ю з користувачами.</textarea>
+
+                                <!-- Опис обов'язків -->
+                                <div class="md:col-span-12">
+                                    <label class="block text-xs text-gray-500 mb-1.5 ml-1">Опис обов'язків</label>
+                                    <textarea rows="3" class="w-full px-4 py-3 text-sm bg-white border border-gray-200 rounded-xl resize-none leading-relaxed outline-none">Проектування інтерфейсів для B2B платформи. Створення та підтримка дизайн-системи. Проведення A/B тестувань та інтерв'ю з користувачами.</textarea>
                                 </div>
                             </div>
                         </div>
 
-                        <button class="flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors bg-white border border-dashed border-gray-300 rounded-lg w-full py-3.5 justify-center hover:bg-gray-50 hover:border-gray-400">
-                            <iconify-icon icon="solar:add-circle-linear" width="18" class="mr-2"></iconify-icon> Додати місце роботи
+                        <!-- Кнопка Додати місце роботи -->
+                        <button class="flex items-center text-sm text-gray-500 hover:text-gray-900 transition-all bg-white border-2 border-dashed border-gray-200 rounded-2xl w-full py-4 justify-center hover:bg-gray-50 hover:border-gray-300">
+                            <iconify-icon icon="solar:add-circle-linear" width="20" class="mr-2"></iconify-icon> 
+                            Додати місце роботи
                         </button>
 
                         <hr class="border-gray-100">
 
+                        <!-- Ключові досягнення -->
                         <div>
-                            <label class="block text-sm text-gray-600 mb-2">Ключові досягнення</label>
-                            <textarea rows="3" class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg resize-none" placeholder="Опишіть свої найвагоміші результати"></textarea>
+                            <label class="block text-sm font-medium text-gray-700 mb-3 ml-1">Ключові досягнення</label>
+                            <textarea rows="4" class="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl resize-none outline-none focus:ring-2 focus:ring-gray-100 transition-all" placeholder="Опишіть свої найвагоміші результати"></textarea>
                         </div>
 
+                        <!-- Посилання на портфоліо -->
                         <div>
-                            <label class="block text-sm text-gray-600 mb-2">Посилання на портфоліо / роботи</label>
-                            <div class="flex items-center space-x-3">
+                            <label class="block text-sm font-medium text-gray-700 mb-3 ml-1">Посилання на портфоліо / роботи</label>
+                            <div class="flex items-center gap-3">
                                 <div class="relative flex-grow">
-                                    <iconify-icon icon="solar:link-linear" width="16" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></iconify-icon>
-                                    <input type="url" value="https://read.cv/alex" class="w-full pl-9 pr-3 py-2 text-sm border border-gray-200 rounded-lg">
+                                    <iconify-icon icon="solar:link-linear" width="18" class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></iconify-icon>
+                                    <input type="url" value="https://read.cv/alex" class="w-full pl-11 pr-4 py-2.5 text-sm border border-gray-200 rounded-xl outline-none">
                                 </div>
-                                <button class="text-sm text-gray-600 border border-gray-200 rounded-lg px-4 py-2 bg-white hover:bg-gray-50 transition-colors">Додати ще</button>
+                                <button class="text-sm font-medium text-gray-700 border border-gray-200 rounded-xl px-6 py-2.5 bg-white hover:bg-gray-50 transition-colors whitespace-nowrap">
+                                    Додати ще
+                                </button>
                             </div>
                         </div>
                     </div>
                 </section>
 
+                <!-- Навички та спеціалізація -->
                 <section class="bg-white rounded-2xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden">
-                    <div class="px-6 py-5 border-b border-gray-100 bg-gray-50/30">
-                        <h2 class="text-lg font-medium tracking-tight text-gray-900">Навички та спеціалізація</h2>
+                    <div class="px-6 py-5 border-b border-gray-100 bg-white">
+                        <h2 class="text-xl font-bold tracking-tight text-gray-900">Навички та спеціалізація</h2>
                     </div>
-                    <div class="p-6 space-y-7">
+                    
+                    <div class="p-6 space-y-8">
+                        <!-- Інструменти та технології -->
                         <div>
-                            <label class="block text-sm text-gray-600 mb-3">Інструменти та технології</label>
-                            <div class="flex flex-wrap gap-2 mb-3">
-                                <span class="inline-flex items-center px-2.5 py-1.5 rounded-md text-xs bg-white text-gray-700 border border-gray-200">
-                                    Figma (4 роки) <button class="ml-1.5 text-gray-400"><iconify-icon icon="solar:close-circle-linear" width="14"></iconify-icon></button>
+                            <label class="block text-sm text-gray-500 mb-4">Інструменти та технології</label>
+                            
+                            <!-- Теги доданих навичок -->
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="inline-flex items-center px-4 py-2 rounded-xl text-sm bg-white text-gray-700 border border-gray-200">
+                                    Figma (4 роки) 
+                                    <button class="ml-2 text-gray-400 hover:text-red-500 transition-colors">
+                                        <iconify-icon icon="solar:close-circle-linear" width="16"></iconify-icon>
+                                    </button>
                                 </span>
-                                <span class="inline-flex items-center px-2.5 py-1.5 rounded-md text-xs bg-white text-gray-700 border border-gray-200">
-                                    Protopie (2 роки) <button class="ml-1.5 text-gray-400"><iconify-icon icon="solar:close-circle-linear" width="14"></iconify-icon></button>
+                                <span class="inline-flex items-center px-4 py-2 rounded-xl text-sm bg-white text-gray-700 border border-gray-200">
+                                    Protopie (2 роки) 
+                                    <button class="ml-2 text-gray-400 hover:text-red-500 transition-colors">
+                                        <iconify-icon icon="solar:close-circle-linear" width="16"></iconify-icon>
+                                    </button>
                                 </span>
                             </div>
-                            <div class="flex space-x-2">
-                                <input type="text" class="flex-grow px-3 py-2 text-sm border border-gray-200 rounded-lg" placeholder="Назва інструменту">
-                                <div class="relative w-32">
-                                    <select class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg appearance-none">
-                                        <option>Досвід</option><option>< 1 року</option><option>1-2 роки</option><option>3+ років</option>
+
+                            <!-- Форма додавання нової навички -->
+                            <div class="flex gap-3">
+                                <input type="text" placeholder="Назва інструменту" class="flex-grow px-4 py-2.5 text-sm border border-gray-200 rounded-xl outline-none focus:border-gray-400 transition-all">
+                                <div class="relative w-40">
+                                    <select class="w-full px-4 py-2.5 text-sm border border-gray-200 rounded-xl appearance-none outline-none cursor-pointer">
+                                        <option selected>Досвід</option>
+                                        <option>< 1 року</option>
+                                        <option>1-2 роки</option>
+                                        <option>3+ років</option>
                                     </select>
-                                    <iconify-icon icon="solar:alt-arrow-down-linear" width="14" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400"></iconify-icon>
+                                    <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></iconify-icon>
                                 </div>
-                                <button class="bg-white border border-gray-200 px-4 py-2 rounded-lg text-sm">Додати</button>
+                                <button class="px-8 py-2.5 border border-gray-200 rounded-xl text-sm font-medium text-gray-900 hover:bg-gray-50 transition-colors shadow-sm">
+                                    Додати
+                                </button>
                             </div>
                         </div>
 
+                        <!-- Додаткові навички -->
                         <div>
-                            <label class="block text-sm text-gray-600 mb-2">Додаткові навички (Soft skills, методології)</label>
-                            <input type="text" value="Agile, Scrum, User Research, Design Thinking" class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg">
+                            <label class="block text-sm text-gray-500 mb-3">Додаткові навички (Soft skills, методології)</label>
+                            <input type="text" value="Agile, Scrum, User Research, Design Thinking" class="w-full px-4 py-3 text-sm border border-gray-200 rounded-xl outline-none focus:border-gray-400 transition-all text-gray-900">
                         </div>
 
-                        <hr class="border-gray-100">
+                        <hr class="border-gray-50">
 
+                        <!-- Знання мов -->
                         <div>
-                            <label class="block text-sm text-gray-600 mb-3">Знання мов</label>
-                            <div class="space-y-3">
-                                <div class="flex items-center space-x-3">
-                                    <select class="w-1/2 px-3 py-2 text-sm border border-gray-200 rounded-lg"><option selected>Англійська</option><option>Іспанська</option></select>
-                                    <select class="w-1/2 px-3 py-2 text-sm border border-gray-200 rounded-lg"><option>B2 - Вище середнього</option><option>C1 - Просунутий</option></select>
-                                    <button class="text-gray-400 hover:text-red-500"><iconify-icon icon="solar:trash-bin-trash-linear" width="18"></iconify-icon></button>
+                            <label class="block text-sm text-gray-500 mb-4">Знання мов</label>
+                            <div class="space-y-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="relative flex-grow">
+                                        <select class="w-full px-4 py-2.5 text-sm border border-gray-200 rounded-xl appearance-none outline-none cursor-pointer">
+                                            <option selected>Англійська</option>
+                                            <option>Українська</option>
+                                            <option>Німецька</option>
+                                        </select>
+                                        <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></iconify-icon>
+                                    </div>
+                                    <div class="relative flex-grow">
+                                        <select class="w-full px-4 py-2.5 text-sm border border-gray-200 rounded-xl appearance-none outline-none cursor-pointer">
+                                            <option selected>B2 - Вище середнього</option>
+                                            <option>C1 - Просунутий</option>
+                                            <option>Native - Рідна</option>
+                                        </select>
+                                        <iconify-icon icon="solar:alt-arrow-down-linear" width="16" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"></iconify-icon>
+                                    </div>
+                                    <button class="text-gray-300 hover:text-red-500 transition-colors px-2">
+                                        <iconify-icon icon="solar:trash-bin-trash-linear" width="20"></iconify-icon>
+                                    </button>
                                 </div>
-                                <button class="text-xs text-gray-500 flex items-center"><iconify-icon icon="solar:add-circle-linear" width="14" class="mr-1.5"></iconify-icon> Додати ще мову</button>
+                                
+                                <button class="text-sm text-gray-400 flex items-center hover:text-gray-700 transition-colors font-medium">
+                                    <iconify-icon icon="solar:add-circle-linear" width="18" class="mr-2"></iconify-icon> 
+                                    Додати ще мову
+                                </button>
                             </div>
                         </div>
                     </div>
                 </section>
 
+                <!-- 6. Фільтрація та переваги (Твій існуючий блок) -->
                 <section class="bg-white rounded-2xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden">
                     <div class="px-6 py-5 border-b border-gray-100 bg-gray-50/30 flex items-center gap-2">
                         <iconify-icon icon="solar:filter-linear" width="20" class="text-gray-500"></iconify-icon>
@@ -306,61 +420,198 @@
                     <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
                             <label class="block text-sm text-gray-600 mb-1">Бажані сфери / ніші</label>
-                            <p class="text-xs text-gray-400 mb-3">Галузі, в яких ви хочете працювати.</p>
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span class="px-2.5 py-1.5 rounded-md text-xs bg-gray-50 border border-gray-200">Fintech</span>
-                                <span class="px-2.5 py-1.5 rounded-md text-xs bg-gray-50 border border-gray-200">SaaS</span>
                             </div>
                             <input type="text" class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" placeholder="Додати сферу...">
                         </div>
                         <div>
                             <label class="block text-sm text-gray-600 mb-1">Не розглядаю</label>
-                            <p class="text-xs text-gray-400 mb-3">Сфери, які вас не цікавлять.</p>
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span class="px-2.5 py-1.5 rounded-md text-xs bg-gray-50/80 text-gray-600 border border-gray-200">Gambling</span>
-                                <span class="px-2.5 py-1.5 rounded-md text-xs bg-gray-50/80 text-gray-600 border border-gray-200">Crypto</span>
                             </div>
                             <input type="text" class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg" placeholder="Додати виняток...">
                         </div>
                     </div>
                 </section>
 
-                <div class="flex justify-end pt-4">
-                    <button class="px-8 py-3 bg-black text-white rounded-xl font-medium hover:bg-gray-800 transition-all shadow-lg shadow-black/5">Зберегти зміни</button>
-                </div>
-            </div>
-
-            <div id="tab-stats" class="tab-content hidden">
-                <div class="h-[400px] bg-white rounded-2xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] flex flex-col items-center justify-center p-8 text-center">
-                    <div class="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-4 text-gray-400">
-                        <iconify-icon icon="solar:inbox-line-linear" width="32"></iconify-icon>
-                    </div>
-                    <h3 class="text-xl font-semibold tracking-tight text-black mb-2">Статистика відгуків порожня</h3>
-                    <p class="text-base text-gray-500 max-w-sm">Ви ще не відгукувались на жодну вакансію. Знайдіть роботу мрії серед тисяч пропозицій.</p>
-                    <button class="mt-8 px-6 py-3 bg-black text-white text-base font-medium rounded-xl hover:bg-gray-800 transition-colors">
-                        Перейти до вакансій
+                <!-- 7. Кнопки дій (Оновлено) -->
+                <div class="flex items-center justify-between pt-4 pb-10">
+                    <button class="flex items-center px-6 py-3 border border-gray-200 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-all active:scale-[0.98]">
+                        <iconify-icon icon="solar:file-download-linear" width="20" class="mr-2"></iconify-icon>
+                        Завантажити резюме (PDF)
+                    </button>
+                    <button class="px-10 py-3 bg-black text-white rounded-xl font-medium hover:bg-gray-800 transition-all shadow-lg shadow-black/5 active:scale-[0.98]">
+                        Зберегти зміни
                     </button>
                 </div>
+
             </div>
 
-            <div id="tab-settings" class="tab-content hidden space-y-8">
-                <section class="bg-white rounded-2xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] p-8">
-                    <h2 class="text-xl font-semibold tracking-tight text-black mb-8">Налаштування акаунту</h2>
-                    <div class="space-y-6 max-w-lg">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Електронна пошта</label>
-                            <input type="email" value="alex@example.com" disabled class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-400 cursor-not-allowed">
+
+            <div id="tab-stats" class="tab-content hidden space-y-8">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200">
+                        <p class="text-sm text-gray-500 mb-1">Надіслано заявок</p>
+                        <div class="flex items-end justify-between">
+                            <h4 class="text-3xl font-semibold text-gray-900">42</h4>
+                            <span class="text-green-500 text-xs font-medium mb-1 flex items-center">
+                                <iconify-icon icon="solar:arrow-right-up-linear" class="mr-1"></iconify-icon> +12%
+                            </span>
                         </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Новий пароль</label>
-                            <input type="password" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-100 outline-none" placeholder="Введіть новий пароль">
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200">
+                        <p class="text-sm text-gray-500 mb-1">Кількість відповідей</p>
+                        <div class="flex items-end justify-between">
+                            <h4 class="text-3xl font-semibold text-gray-900">8</h4>
+                            <span class="text-gray-400 text-xs font-medium mb-1">19% conversion</span>
                         </div>
-                        <button class="px-6 py-3 bg-black text-white rounded-xl font-medium hover:bg-gray-800 transition-all shadow-lg shadow-black/5">
-                            Оновити пароль
-                        </button>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-gray-200">
+                        <p class="text-sm text-gray-500 mb-1">Переглядів профілю</p>
+                        <div class="flex items-end justify-between">
+                            <h4 class="text-3xl font-semibold text-gray-900">156</h4>
+                            <span class="text-green-500 text-xs font-medium mb-1 flex items-center">
+                                <iconify-icon icon="solar:arrow-right-up-linear" class="mr-1"></iconify-icon> +24
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Placeholder -->
+                <section class="bg-white rounded-2xl border border-gray-200 p-6">
+                    <h3 class="text-sm font-medium text-gray-900 mb-6">Активність відгуків за місяць</h3>
+                    <div class="h-48 w-full bg-gray-50 rounded-xl border border-dashed border-gray-200 flex items-center justify-center text-gray-400">
+                        <div class="flex flex-col items-center">
+                            <iconify-icon icon="solar:graph-linear" width="32" class="mb-2"></iconify-icon>
+                            <p class="text-xs tracking-tight uppercase font-bold">Графік активності (Placeholder)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recommendations & Education -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Рекомендовані вакансії</h3>
+                        <div class="space-y-3">
+                            <div class="p-4 bg-white border border-gray-200 rounded-xl flex justify-between items-center group cursor-pointer hover:border-black transition-colors">
+                                <div>
+                                    <h4 class="text-sm font-semibold group-hover:underline">Product Designer</h4>
+                                    <p class="text-xs text-gray-500">Revolut • $5000 - $7000</p>
+                                </div>
+                                <iconify-icon icon="solar:alt-arrow-right-linear" class="text-gray-300"></iconify-icon>
+                            </div>
+                            <div class="p-4 bg-white border border-gray-200 rounded-xl flex justify-between items-center group cursor-pointer hover:border-black transition-colors">
+                                <div>
+                                    <h4 class="text-sm font-semibold group-hover:underline">Senior UI Designer</h4>
+                                    <p class="text-xs text-gray-500">Wise • Remote</p>
+                                </div>
+                                <iconify-icon icon="solar:alt-arrow-right-linear" class="text-gray-300"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-4">Корисні статті</h3>
+                        <div class="space-y-3">
+                            <a href="#" class="block p-4 bg-gray-900 rounded-xl text-white hover:bg-gray-800 transition-colors">
+                                <p class="text-[10px] text-gray-400 uppercase font-bold mb-1">Поради для оферу</p>
+                                <h4 class="text-sm font-medium">Як вести переговори про зарплату?</h4>
+                            </a>
+                            <a href="#" class="block p-4 bg-white border border-gray-200 rounded-xl hover:border-gray-400 transition-colors">
+                                <p class="text-[10px] text-gray-500 uppercase font-bold mb-1">Кар'єра</p>
+                                <h4 class="text-sm font-medium">Підготовка до технічного інтерв'ю</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            
+            <div id="tab-settings" class="tab-content hidden space-y-6">
+                <!-- Безпека -->
+                <section class="bg-white rounded-2xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-100 bg-gray-50/30">
+                        <h3 class="text-sm font-medium text-gray-900">Безпека та доступ</h3>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs text-gray-500 mb-1.5 uppercase font-bold tracking-wider">Email</label>
+                                <input type="email" value="alex.design@example.com" class="w-full px-3 py-2 text-sm border border-gray-200 rounded-lg bg-gray-50 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-500 mb-1.5 uppercase font-bold tracking-wider">Пароль</label>
+                                <button class="w-full px-3 py-2 text-sm text-left border border-gray-200 rounded-lg text-gray-600 hover:bg-gray-50">Змінити пароль</button>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-blue-50/50 border border-blue-100 rounded-xl">
+                            <div class="flex items-center">
+                                <iconify-icon icon="solar:shield-check-linear" class="text-blue-600 mr-3" width="24"></iconify-icon>
+                                <div>
+                                    <p class="text-sm font-medium text-blue-900">Двофакторна автентифікація</p>
+                                    <p class="text-xs text-blue-700">Додатковий захист вашого акаунту</p>
+                                </div>
+                            </div>
+                            <button class="px-4 py-1.5 bg-blue-600 text-white text-xs font-medium rounded-lg">Увімкнути</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Конфіденційність -->
+                <section class="bg-white rounded-2xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-100 bg-gray-50/30">
+                        <h3 class="text-sm font-medium text-gray-900">Конфіденційність</h3>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <label class="flex items-center justify-between cursor-pointer group">
+                            <div>
+                                <p class="text-sm font-medium text-gray-900">Приховати профіль від пошукових систем</p>
+                                <p class="text-xs text-gray-500">Ваше резюме не буде індексуватися Google</p>
+                            </div>
+                            <div class="relative inline-flex items-center">
+                                <input type="checkbox" class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-black after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                            </div>
+                        </label>
+                        <hr class="border-gray-100">
+                        <label class="flex items-center justify-between cursor-pointer group">
+                            <div>
+                                <p class="text-sm font-medium text-gray-900">Анонімний режим</p>
+                                <p class="text-xs text-gray-500">Роботодавці не бачитимуть ваші контакти до вашого відгуку</p>
+                            </div>
+                            <div class="relative inline-flex items-center">
+                                <input type="checkbox" checked class="sr-only peer">
+                                <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-black after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+                            </div>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Заблоковані компанії -->
+                <section class="bg-white rounded-2xl border border-gray-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)] overflow-hidden border-red-100">
+                    <div class="px-6 py-4 border-b border-red-50 bg-red-50/10">
+                        <h3 class="text-sm font-medium text-red-900">Заблоковані компанії</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            <input type="text" placeholder="Введіть назву компанії..." class="flex-grow px-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:border-red-300">
+                            <button class="px-4 py-2 bg-gray-100 text-gray-600 text-sm font-medium rounded-lg hover:bg-gray-200">Додати</button>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 text-xs border border-red-100 rounded-full">
+                                GambleStars Ltd. <button class="ml-2 text-red-400 hover:text-red-900">×</button>
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 bg-red-50 text-red-700 text-xs border border-red-100 rounded-full">
+                                CryptoScam Corp. <button class="ml-2 text-red-400 hover:text-red-900">×</button>
+                            </span>
+                        </div>
                     </div>
                 </section>
             </div>
+
 
         </div>
     </div>
